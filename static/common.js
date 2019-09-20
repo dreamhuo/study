@@ -38,8 +38,8 @@ function initFont(fontArr) {
                   '<line x1="100" y1="0" x2="100" y2="200" stroke="#DDD" />'+
                   '<line x1="0" y1="100" x2="200" y2="100" stroke="#DDD" />'+
                 '</svg>'+
-                '<button id="'+ id +'-write">示范写</button>'+
-                '<button id="'+ id +'-reset">我来写</button>'
+                '<button id="'+ id +'-write" class="btn-success">示范写</button>'+
+                '<button id="'+ id +'-reset" class="btn-info">我来写</button>'
         )
         var writer = HanziWriter.create(id, fontArr[i], {
           width: 200,
