@@ -13,6 +13,14 @@
 svg{
     vertical-align: middle;
 }
+#mainBox{
+    text-align: center;
+}
+.btnWrap{
+    display: block;
+    margin: 10px 0 25px;
+    text-align: center;
+}
 button {
     display: inline-block;
     padding: 6px 12px;
@@ -35,6 +43,7 @@ button {
     border-radius: 4px;
     vertical-align: middle;
     margin-right: 5px;
+    margin-left: 5px;
 }
 button:active{outline: 0;}
 .btn-primary {
