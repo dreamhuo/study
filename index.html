@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="format-detection" content="telephone=yes" />
+    <title>认字</title>
+    <link rel="stylesheet" href="static/common.css?ver=201220043567">
+  </head>
+  <body>
+    <div id="mainBox">
+
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+<script src="static/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@1.3/dist/hanzi-writer.min.js"></script>
+<script>
+    var fontArr = ['天', '地', '人', '你', '我', '他']
+    var fontArrSize = fontArr.length;
+    for(var i = 0; i < fontArrSize; i++) {
+        var id = 'font' + i;
+        $("#mainBox").append(
+                '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" id="'+ id +'" class="itemWrap">'+
+                  '<line x1="0" y1="0" x2="200" y2="200" stroke="#DDD" />'+
+                  '<line x1="200" y1="0" x2="0" y2="200" stroke="#DDD" />'+
+                  '<line x1="100" y1="0" x2="100" y2="200" stroke="#DDD" />'+
+                  '<line x1="0" y1="100" x2="200" y2="100" stroke="#DDD" />'+
+                '</svg>'+
+                '<button id="'+ id +'-write">示范写</button>'+
+                '<button id="'+ id +'-reset">我来写</button>'
+        )
+        var writer = HanziWriter.create(id, fontArr[i], {
+          width: 200,
+          height: 200,
+          padding: 5,
+          showOutline: true
+        });
+        writer.quiz();
+        (function (writer, id){
+            document.getElementById( id +'-write').addEventListener('click', function() {
+              writer.animateCharacter();
+            });
+            document.getElementById( id +'-reset').addEventListener('click', function () {
+              writer.quiz();
+            });
+        })(writer, id);
+    }
+</script>
+
+
+
