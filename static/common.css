@@ -35,7 +35,6 @@ button {
     border-radius: 4px;
     vertical-align: middle;
     margin-right: 5px;
-    margin-left: 5px;
 }
 button:active{outline: 0;}
 .btn-primary {
