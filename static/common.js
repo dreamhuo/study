@@ -11,7 +11,22 @@ function getArrRandomly(arr) {
     //每一次遍历，都相当于把从数组中随机抽取（不重复，因为）一个元素放到数组的最前面（索引顺序为0，1，2...len-1）
     return arr;
 }
-
+function urlParse () {
+    let url = window.location.search;
+    let obj = {};
+    let reg = /[?&][^?&]+=[^?&]+/g;
+    let arr = url.match(reg);
+    // ['?id=123232', '&a=b']
+    if (arr) {
+        arr.forEach((item) => {
+            let tempArr = item.substring(1).split('=');
+            let key = decodeURIComponent(tempArr[0]);
+            let val = decodeURIComponent(tempArr[1]);
+            obj[key] = val;
+        });
+    }
+    return obj;
+};
 function initFont(fontArr) {
     var fontArrSize = fontArr.length;
     for(var i = 0; i < fontArrSize; i++) {
