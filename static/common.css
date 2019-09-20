@@ -1,6 +1,12 @@
 
-
+.tit{
+    text-align: center;
+    font-size: 17px;
+    color: #ffa21c;
+    padding: 10px 0;
+}
 .itemWrap{
     border: 1px solid #2C405A;
+    text-align: center;
 }
 
