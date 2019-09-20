@@ -9,44 +9,22 @@
   </head>
   <body>
     <div class="tit"> ^_^ 霍柏轩加油 ^_^ </div>
+    <button id="resetArr">随机打乱</button>
     <div id="mainBox"></div>
     <!-- built files will be auto injected -->
   </body>
 </html>
 <script src="static/jquery.min.js"></script>
+<script src="static/common.js"></script>
 <script src="static/hanzi-writer.min.js"></script>
 <script>
     var fontArr = ['天', '地', '人', '你', '我', '他']
-    var fontArrSize = fontArr.length;
-    for(var i = 0; i < fontArrSize; i++) {
-        var id = 'font' + i;
-        $("#mainBox").append(
-                '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" id="'+ id +'" class="itemWrap">'+
-                  '<line x1="0" y1="0" x2="200" y2="200" stroke="#DDD" />'+
-                  '<line x1="200" y1="0" x2="0" y2="200" stroke="#DDD" />'+
-                  '<line x1="100" y1="0" x2="100" y2="200" stroke="#DDD" />'+
-                  '<line x1="0" y1="100" x2="200" y2="100" stroke="#DDD" />'+
-                '</svg>'+
-                '<button id="'+ id +'-write">示范写</button>'+
-                '<button id="'+ id +'-reset">我来写</button>'
-        )
-        var writer = HanziWriter.create(id, fontArr[i], {
-          width: 200,
-          height: 200,
-          padding: 5,
-          drawingWidth: 40,
-          showOutline: true
-        });
-        writer.quiz();
-        (function (writer, id){
-            document.getElementById( id +'-write').addEventListener('click', function() {
-              writer.animateCharacter();
-            });
-            document.getElementById( id +'-reset').addEventListener('click', function () {
-              writer.quiz();
-            });
-        })(writer, id);
-    }
+    initFont(fontArr);
+    document.getElementById('resetArr').addEventListener('click', function() {
+      $('#mainBox').empty();
+      fontArr = getArrRandomly(fontArr);
+      initFont(fontArr);
+    });
 </script>
 
 
