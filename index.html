@@ -18,7 +18,7 @@
 <script src="static/common.js"></script>
 <script src="static/hanzi-writer.min.js"></script>
 <script>
-    var fontArr = urlParse().font.split('&nbsp;');
+    var fontArr = urlParse().font.split('|');
     initFont(fontArr);
     document.getElementById('resetArr').addEventListener('click', function() {
       $('#mainBox').empty();
