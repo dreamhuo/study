@@ -47,7 +47,6 @@ function initFont(fontArr) {
             padding: 5,
             radicalColor: '#ff0000',
             strokeAnimationSpeed:2,
-            delayBetweenStrokes:3,
             drawingWidth: 40,
             showOutline: true
         });
