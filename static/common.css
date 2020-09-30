@@ -96,3 +96,19 @@ button:active{outline: 0;}
     display: block;
     margin: 0 auto 50px auto;
 }
+#submitFont{
+    display: block;
+    margin: 0 auto 50px auto;
+}
+.iptWrap{
+    text-align: center;
+    padding-bottom: 15px;
+}
+.iptWrap textarea{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.iptWrap textarea:focus{
+    outline: none;
+}

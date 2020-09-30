@@ -10,6 +10,10 @@
   <body>
     <div class="tit"> ^_^ 霍柏轩加油 ^_^ </div>
     <button id="resetArr" class="btn-primary">随机打乱</button>
+    <div class="iptWrap">
+      <textarea rows="3" cols="20" value="" placeholder="输入不会写笔划的字" id="fontIpt"></textarea>
+    </div>
+    <button id="submitFont" class="btn-primary">确定</button>
     <div id="mainBox"></div>
     <!-- built files will be auto injected -->
   </body>
@@ -18,11 +22,17 @@
 <script src="static/common.js?ver=20190920"></script>
 <script src="static/hanzi-writer.min.js"></script>
 <script>
-    var fontArr = urlParse().font.split('|');
-    initFont(fontArr);
+    // var fontArr = urlParse().font.split('|');
+    // initFont(fontArr);
     document.getElementById('resetArr').addEventListener('click', function() {
       $('#mainBox').empty();
       fontArr = getArrRandomly(fontArr);
+      initFont(fontArr);
+    });
+    document.getElementById('submitFont').addEventListener('click', function() {
+      $('#mainBox').empty();
+      var fontStr = $('#fontIpt').val().replace(/\s/g, "");
+      fontArr = fontStr.split('');
       initFont(fontArr);
     });
 </script>

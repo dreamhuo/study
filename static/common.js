@@ -42,11 +42,14 @@ function initFont(fontArr) {
                 '<button id="'+ id +'-reset" class="btn-info">我来写</button></div>'
         )
         var writer = HanziWriter.create(id, fontArr[i], {
-          width: 200,
-          height: 200,
-          padding: 5,
-          drawingWidth: 40,
-          showOutline: true
+            width: 200,
+            height: 200,
+            padding: 5,
+            radicalColor: '#ff0000',
+            strokeAnimationSpeed:2,
+            delayBetweenStrokes:3,
+            drawingWidth: 40,
+            showOutline: true
         });
         writer.quiz();
         (function (writer, id){
